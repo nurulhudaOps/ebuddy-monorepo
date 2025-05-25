@@ -39,13 +39,15 @@ export async function updateDocument<T>(
   collectionName: string,
   docId: string,
   data: Partial<T>,
-): Promise<void> {
+): Promise<Date> {
   const db = adminDb.collection(collectionName);
-  await db.doc(docId).update(data);
+  const result = await db.doc(docId).update(data);
+  return result.writeTime.toDate();
 }
 
 // Delete a document
-export async function deleteDocument(collectionName: string, docId: string): Promise<void> {
+export async function deleteDocument(collectionName: string, docId: string): Promise<Date> {
   const db = adminDb.collection(collectionName);
-  await db.doc(docId).delete();
+  const result = await db.doc(docId).delete();
+  return result.writeTime.toDate();
 }

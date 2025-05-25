@@ -7,6 +7,11 @@ const configs = {
     port: process.env.PORT || 5000,
     host: process.env.HOST || '127.0.0.1',
   },
+  middleware: {
+    basicUser: process.env.BASIC_USER || 'admin',
+    basicPass: process.env.BASIC_PASS || 'password',
+    jwtSecret: process.env.JWT_SECRET || 'your_jwt_secret',
+  },
   firebase: {
     type: process.env.FIREBASE_TYPE,
     projectId: process.env.FIREBASE_PROJECT_ID,

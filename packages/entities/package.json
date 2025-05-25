@@ -1,0 +1,13 @@
+{
+  "name": "@repo/entities",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./base": "./base.ts",
+    "./user": "./user.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}
